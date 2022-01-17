@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class UserCreateComponent implements OnInit {
 
   user: User = {
-    id: '',
     name: '',
     email: '',
     phone: ''

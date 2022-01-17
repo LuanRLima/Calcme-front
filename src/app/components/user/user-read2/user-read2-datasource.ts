@@ -7,14 +7,14 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { UserDeleteComponent } from '../user-delete/user-delete.component';
 
 const EXAMPLE_DATA: User[] = [
-  {"id": "1", "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
-  {"id": "2", "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
-  {"id": "3", "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
-  {"id": "4", "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
-  {"id": "5", "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
-  {"id": "6", "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
-  {"id": "7", "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
-  {"id": "8", "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
+  {"id": 1, "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
+  {"id": 2, "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
+  {"id": 3, "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
+  {"id": 4, "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
+  {"id": 5, "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
+  {"id": 6, "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
+  {"id": 7, "name": "maria", "email": "maria@gmail.com", "phone": "81999966644"},
+  {"id": 8, "name": "Lucas", "email": "lucas@gmail.com", "phone": "81999966644"},
   
 
 

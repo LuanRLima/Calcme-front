@@ -9,7 +9,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class UserService {
-  baseUrl = "http://localhost:3001/Users";
+  baseUrl = "http://localhost:8080/usuarios";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -52,7 +52,7 @@ export class UserService {
     );
   }
 
-  delete(id: string): Observable<User> {
+  delete(id: number): Observable<User> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<User>(url).pipe(
       map((obj) => obj),

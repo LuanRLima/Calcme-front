@@ -11,7 +11,7 @@ export class UserCrudComponent implements OnInit {
 
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
-      title: 'Cadastro de Produtos',
+      title: 'Cadastro de Usuário',
       icon: 'storefront',
       routeUrl: '/users'
     }
