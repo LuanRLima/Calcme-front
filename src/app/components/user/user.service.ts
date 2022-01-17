@@ -11,11 +11,12 @@ import { map, catchError } from "rxjs/operators";
 export class UserService {
   baseUrl = "http://localhost:8080/usuarios";
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar,
+     private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
-      duration: 3000,
+      duration: 6000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
@@ -23,10 +24,13 @@ export class UserService {
   }
 
   create(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, user).pipe(
+    if(user.email === "" || user.name === "" || user.phone === ""){
+         return this.errorHandlerCreate(user)
+    }else{ return this.http.post<User>(this.baseUrl, user).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
+    );}
+   
   }
 
   read(): Observable<User[]> {
@@ -62,6 +66,11 @@ export class UserService {
 
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
+  }
+
+  errorHandlerCreate(e: any): Observable<any> {
+    this.showMessage("Ocorreu um no cadastro todos os campos precisam ser preenchido!", true);
     return EMPTY;
   }
 }
