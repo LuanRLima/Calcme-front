@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class UserReadComponent implements OnInit {
 
   users: User[]
-  displayedColumns = ['id', 'name', 'email', 'phone', 'action']
+  displayedColumns = ['id', 'name', 'email', 'phone'
+  //, 'action'
+]
   
   constructor(private userService: UserService) { }
 
